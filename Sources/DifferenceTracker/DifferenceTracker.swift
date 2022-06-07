@@ -41,18 +41,16 @@ private extension RemainingRemovalTracker {
 @available(macOS 10.15, iOS 13.0, watchOS 6.0, tvOS 13.0, *)
 extension CollectionDifference where ChangeElement: Hashable
 {
-    public typealias Steps = Array<CollectionDifference<ChangeElement>.ChangeStep>
-    
     public enum ChangeStep {
         case insert(_ element: ChangeElement, at: Int)
         case remove(_ element: ChangeElement, at: Int)
         case move(_ element: ChangeElement, from: Int, to: Int)
     }
     
-    public var steps: Steps {
+    public var steps: [ChangeStep] {
         guard !isEmpty else { return [] }
         
-        var steps = Steps()
+        var steps: [ChangeStep] = []
         var offsetTracker = RemainingRemovalTracker()
 
         inferringMoves().forEach { change in
