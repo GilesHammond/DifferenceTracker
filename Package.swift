@@ -12,8 +12,7 @@ let package = Package(
     dependencies: [],
     targets: [
         .target(
-            name: "DifferenceTracker",
-            dependencies: []),
+            name: "DifferenceTracker"),
         .testTarget(
             name: "DifferenceTrackerTests",
             dependencies: ["DifferenceTracker"]),
