@@ -22,3 +22,8 @@ step indexes are transient and do not relate directly to the start or end collec
             outlineView.moveItem(at: from, inParent: node, to: to, inParent: node)
         }
     }
+
+## Acknowledgements
+
+DifferenceTracker development was aided by [@paxos](https://github.com/paxos) and his [thorough test suite](https://github.com/paxos/NSOutlineViewPatchTestSuite). Thank you.
+
